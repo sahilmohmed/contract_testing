@@ -1,0 +1,1096 @@
+{
+  "consumer": {
+    "name": "ItemsCatalogue"
+  },
+  "interactions": [
+    {
+      "description": "add item with invalid name key",
+      "providerStates": [
+        {
+          "name": "adding a item with an invalid name should be rejected"
+        }
+      ],
+      "request": {
+        "body": {
+          "abc": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/api/items"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "add item with invalid price",
+      "providerStates": [
+        {
+          "name": "adding a item with an invalid price should be rejected"
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Iphone 13",
+          "price": "abc",
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/api/items"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "add item with invalid price key",
+      "providerStates": [
+        {
+          "name": "adding a item with an invalid price should be rejected"
+        }
+      ],
+      "request": {
+        "body": {
+          "abc": 4999.99,
+          "name": "Iphone 13",
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/api/items"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "add item with invalid quantity key",
+      "providerStates": [
+        {
+          "name": "adding a item with an invalid quantity should be rejected"
+        }
+      ],
+      "request": {
+        "body": {
+          "abc": 12,
+          "name": "Iphone 13",
+          "price": 4999.99
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/api/items"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "add item with empty body",
+      "providerStates": [
+        {
+          "name": "adding an item with an empty request body should be rejected"
+        }
+      ],
+      "request": {
+        "body": {
+
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/api/items"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "add item with invalid name",
+      "providerStates": [
+        {
+          "name": "adding an item with invalid name should be rejected"
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "!!!!",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/api/items"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "add item with invalid quantity",
+      "providerStates": [
+        {
+          "name": "adding an item with invalid quantity should be rejected"
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": "abc"
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/api/items"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "delete item with invalid ID",
+      "providerStates": [
+        {
+          "name": "delete an item with invalid ID"
+        }
+      ],
+      "request": {
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI="
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "DELETE",
+        "path": "/api/items/123"
+      },
+      "response": {
+        "body": "Item does not exist",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 404
+      }
+    },
+    {
+      "description": "edit item with invalid ID",
+      "providerStates": [
+        {
+          "name": "editing an item with invalid ID should be rejected"
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI="
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "PUT",
+        "path": "/api/items/123"
+      },
+      "response": {
+        "body": "Item does not exist",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 404
+      }
+    },
+    {
+      "description": "get item with invalid ID",
+      "providerStates": [
+        {
+          "name": "item with invalid ID does not exist"
+        }
+      ],
+      "request": {
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI="
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "GET",
+        "path": "/api/items/123"
+      },
+      "response": {
+        "body": "Item does not exist",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 404
+      }
+    },
+    {
+      "description": "edit item with valid data",
+      "providerStates": [
+        {
+          "name": "item with valid ID and body exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c",
+            "name": "Iphone 13",
+            "price": 4999.99,
+            "quantity": 12
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "PUT",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "body": {
+          "id": "43900953-da25-4d04-b3c2-ecd8958fac1c",
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$.id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.price": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "number"
+                }
+              ]
+            },
+            "$.quantity": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "get item with valid ID",
+      "providerStates": [
+        {
+          "name": "item with valid ID and body exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c",
+            "name": "Iphone 13",
+            "price": 4999.99,
+            "quantity": 12
+          }
+        }
+      ],
+      "request": {
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI="
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "GET",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "body": {
+          "id": "43900953-da25-4d04-b3c2-ecd8958fac1c",
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$.id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.price": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "number"
+                }
+              ]
+            },
+            "$.quantity": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "add a product with no auth token",
+      "providerStates": [
+        {
+          "name": "item with valid ID does not exist",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/api/items"
+      },
+      "response": {
+        "status": 401
+      }
+    },
+    {
+      "description": "add valid item",
+      "providerStates": [
+        {
+          "name": "item with valid ID does not exist",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/api/items"
+      },
+      "response": {
+        "body": {
+          "id": "43900953-da25-4d04-b3c2-ecd8958fac1c",
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$.id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.price": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "number"
+                }
+              ]
+            },
+            "$.quantity": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            }
+          }
+        },
+        "status": 201
+      }
+    },
+    {
+      "description": "delete a product with no auth token",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "status": 401
+      }
+    },
+    {
+      "description": "delete item with valid ID",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI="
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "DELETE",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "status": 204
+      }
+    },
+    {
+      "description": "edit a product with no auth token",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "method": "PUT",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "status": 401
+      }
+    },
+    {
+      "description": "edit item with invalid name",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "!!!!",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "PUT",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "edit item with invalid name key",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "abc": "Iphone 13",
+          "price": 4999.99,
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "PUT",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "edit item with invalid price",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Iphone 13",
+          "price": "abc",
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "PUT",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "edit item with invalid price key",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "abc": 4999.99,
+          "name": "Iphone 13",
+          "quantity": 12
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "PUT",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "edit item with invalid quantity",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Iphone 13",
+          "price": 4999.99,
+          "quantity": "abc"
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "PUT",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "edit item with invalid quantity key",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+          "abc": 12,
+          "name": "Iphone 13",
+          "price": 4999.99
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "PUT",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "editing an item with an empty body should be rejected",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "body": {
+
+        },
+        "headers": {
+          "Authorization": "Bearer AAABd9yHUjI=",
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "header": {
+            "Authorization": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "Bearer [a-zA-Z0-9=\\+/]+"
+                }
+              ]
+            }
+          }
+        },
+        "method": "PUT",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "body": "Invalid input data",
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 400
+      }
+    },
+    {
+      "description": "get a product with no auth token",
+      "providerStates": [
+        {
+          "name": "item with valid ID exists",
+          "params": {
+            "id": "43900953-da25-4d04-b3c2-ecd8958fac1c"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/api/items/43900953-da25-4d04-b3c2-ecd8958fac1c"
+      },
+      "response": {
+        "status": 401
+      }
+    }
+  ],
+  "metadata": {
+    "pact-jvm": {
+      "version": "4.6.5"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "Inventory"
+  }
+}

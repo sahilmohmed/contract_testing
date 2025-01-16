@@ -1,0 +1,9 @@
+serviceClients:
+  inventory:
+    baseUrl: "http://localhost:9000"
+pact:
+  verifier:
+    publishResults: 'true'
+
+
+

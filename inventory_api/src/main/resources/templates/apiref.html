@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <title>API Reference</title>
+    <h3>Sahil Mohmed - Emirates Group task</h3>
+    <h1>API Reference</h1>
+    <p>RESTful API for managing a simple inventory system</p>
+
+    <table>
+        <tr>
+            <th><strong>Type</strong></th>
+            <th><strong>Path</strong></th>
+            <th><strong>Body</strong></th>
+            <th><strong>Response</strong></th>
+            <th><strong>HTTP Status</strong></th>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/api/items</td>
+            <td>{"name": "abc", "quantity": 123, "price": 1.23}</td>
+            <td>{
+                "id": "b5df2750-14c9-4cd5-8c90-eb851f51ac74",
+                "name": "abc",
+                "quantity": 123,
+                "price": 1.23
+                }</td>
+            <td>201 - Created<br>400 - Bad request</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/items/{id}</td>
+            <td></td>
+            <td>{
+                "id": "b5df2750-14c9-4cd5-8c90-eb851f51ac74",
+                "name": "abc",
+                "quantity": 123,
+                "price": 1.23
+                }</td>
+            <td>200 - OK <br> 404 - Not found</td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td>/api/items/{id}</td>
+            <td>{"name": "abc", "quantity": 88, "price": 1.23}</td>
+            <td>{
+                "id": "b5df2750-14c9-4cd5-8c90-eb851f51ac74",
+                "name": "abc",
+                "quantity": 88,
+                "price": 1.23
+                }</td>
+            <td>200 - OK<br> 400 - Bad request<br> 404 - Not found</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>/api/items/{id}</td>
+            <td></td>
+            <td></td>
+            <td>204 - No Content<br> 404 - Not found</td>
+        </tr>
+    </table>
+    <br>
+    <h2>Dummy data</h2>
+    <p>Dummy data inserted into the database upon initialization (for testing purposes)</p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>12db9bdc-617e-4710-b946-b0cab5482d1</td>
+            <td>Iphone 13</td>
+            <td>12</td>
+            <td>4999.99</td>
+        </tr>
+        <tr>
+            <td>1b07b137-c486-4a5e-9e5c-a33295e471cc</td>
+            <td>Macbook Pro</td>
+            <td>27</td>
+            <td>5999.99</td>
+        </tr>
+        <tr>
+            <td>a1aed83e-1c33-4f09-8334-0d7618d6f86c</td>
+            <td>Ipad</td>
+            <td>19</td>
+            <td>3499.99</td>
+        </tr>
+        <tr>
+            <td>1bc78422-c55c-4c4d-b453-124b56ed261e</td>
+            <td>Keyboard</td>
+            <td>86</td>
+            <td>799.99</td>
+        </tr>
+    </table>
+</body>
+
+</html>
