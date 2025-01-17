@@ -510,9 +510,13 @@ Steps:
        add a build step to execute Windows batch command
        <br>
    input the absolute path of the batch `stop_docker.bat` which is located in `root` directory
-
+<!-- image of jenkins -->
+**Please note - the batch files will need to be updated with the absolute path of the cloned repo**
 
 
 ## Future improvments 
-
+- Cleaner integration into Jenkins using maven plugin
+- Implement Spring WebFlux
+- Use of Junit to create a cleaner results report
+- Use of Pact Maven plugin for ease of testing and publishing of results
 
