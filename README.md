@@ -14,7 +14,7 @@ My approach to contract testing involves having three seperate entities:
 2. **Pact Broker** - the Pact broker is a web app which allows the consumer to share contacts with the provider. It also allows the provider to publish results. 
 3. **Provider** - the provider is the real API, the contracts are tested agains the real API. 
    
- ![flow](inventory_api\src\main\resources\static\flow_pact.png)  
+ ![flow](inventory_api/src/main/resources/static/flow_pact.png)  
 
 ## Brief Repo Contents
 In the real world, the Consumer and Provider would be on seperate repos, however for this task i have put them both on a single repo to keep things simple. 
@@ -121,7 +121,7 @@ I have also implemented a front end API reference using a `@Controller`, this us
         }
 
 
- ![api](inventory_api\src\main\resources\static\api_ref.png)  
+ ![api](inventory_api/src/main/resources/static/api_ref.png)  
 
 The Pact verification tests use JUnit5 annotations to setup the class and to define the test methods: 
 <br>
@@ -229,7 +229,7 @@ The Pact broker can also be used to create web hooks to automatically trigger te
 **The login for the Pact broker is set to admin/password
 **
 
- ![pact](inventory_api\src\main\resources\static\pacts.png)  
+ ![pact](inventory_api/src/main/resources/static/pacts.png)  
 ## API End points
 All API end points can also be found in the API reference which is hosted on `inventory_api` Spring boot webapp on `/api`.
 
@@ -456,8 +456,8 @@ Steps:
 
 ### 3. View Contract on Pact broker
 To ensure the contract has been pushed to the Pact broker navigate to `http://localhost:9292/` and ensure there is a contract with the Provider name as `Inventory`
-inventory_api\src\main\resources\static\pact2.png
- ![pact2](inventory_api\src\main\resources\static\pact2.png)  
+inventory_api/src/main/resources/static/pact2.png
+ ![pact2](inventory_api/src/main/resources/static/pact2.png)  
 ### 4. Run tests on Provider
 The contract can now be tested against the real API. And the result can be pushed to the Pact Broker.
 <br>
@@ -469,13 +469,13 @@ Steps:
 
 ### 5. View result on Pact broker
 The results of the testing is now pushed to the Pact broker and can be viewed by navigating to `http://localhost:9292/` and the last verified time will be displayed.
- ![pact3](inventory_api\src\main\resources\static\pact3.png)  
+ ![pact3](inventory_api/src/main/resources/static/pact3.png)  
 ### 6. (optional) Setup Jenkins Pipeline
 Jenkins can be used to setup a pipeline and to monitor test history and results. In the real world testing of contracts, a pipeline would consist of a jenkins job on the Consumer premisis which will create a contract and push it to the Pact Broker. 
 <br>
 However for the purpose of this task i have created a pipeline which runs both **Consumer** and **Provider** tests only to test the integration of this project. 
 
- ![jenk2](inventory_api\src\main\resources\static\jenkins2.png)  
+ ![jenk2](inventory_api/src/main/resources/static/jenkins2.png)  
 Steps:
 1. On Jenkins - create a job for Consumer
    <br> 
@@ -517,7 +517,7 @@ Steps:
        <br>
    input the absolute path of the batch `stop_docker.bat` which is located in `root` directory
 **Please note - the batch files will need to be updated with the absolute path of the cloned repo**
- ![jenk](inventory_api\src\main\resources\static\jenkins.png)  
+ ![jenk](inventory_api/src/main/resources/static/jenkins.png)  
 
 ## Future improvments 
 - Cleaner integration into Jenkins using maven plugin
