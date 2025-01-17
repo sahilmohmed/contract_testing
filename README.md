@@ -139,7 +139,6 @@ The Pact verification tests use JUnit5 annotations to setup the class and to def
 <br>
 I have also implemented Web security config for Bearer token authorization (see Authorization chapter below)
 
-
 ## Consumer Mock
 This is where the consumer tests are written and tested against a mock API. 
 A `@Service` client has been implemented to serve the mock server requests using a rest template:
@@ -427,22 +426,92 @@ However the contract test passes in a static bearer token which will be invalid 
     }
 
 ## Running the program
-### Pre-requisites 
-pre reqs
-### 1. Launch Pact broker
-launch pact broker
-### 2. Run Consumer first to generate contracts
-run consumer
-### 3. View contract on Pact broker
-view contract
-### 4. Run tests on Provider
-run tests
-### 5. View result on Pact broker
-view results
-### 6. (optional) Setup Jenkins Pipeline
-setup jenkins pipeline
+### Pre-Requisites 
+1. Java 17+ installed
+2. Maven
+3. Docker
+4. (optional) Jenkins
+### 1. Launch Pact Broker
+The Pact broker will need to be launched before any testing commences, this will ensure the Consumer has an end point to push the contract to, and the provider has an end point to get the contract from. 
+<br>
+<br>
+Steps:
+1. navigate to the root directory of this repo
+2. run the following command from the root directory `docker compose -f "docker-compose.yaml" up -d`
+3. verify Pact Broker is running correctly by navigating to `http://localhost:9292/`
+4. login using `admin` and `password`
 
-## Observations
+### 2. Run Consumer Test
+In order to generate the contract the consumer will test will have to be run. 
+<br>
+<br>
+Steps:
+1. navigate to the **consumer** directory of this repo
+2. run the following command `.\mvnw clean compile verify -f pom.xml`
+3. publish the contract to Pact Broker using the following command `./mvnw pact:publish`
+
+### 3. View Contract on Pact broker
+To ensure the contract has been pushed to the Pact broker navigate to `http://localhost:9292/` and ensure there is a contract with the Provider name as `Inventory`
+<!-- image of contract -->
+### 4. Run tests on Provider
+The contract can now be tested against the real API. And the result can be pushed to the Pact Broker.
+<br>
+<br>
+
+Steps:
+1. navigate to the `inventory_api` directory of this repo.
+2. run the following command `.\mvnw clean compile verify -D pact.verifier.publishResults=true -f pom.xml`
+
+### 5. View result on Pact broker
+The results of the testing is now pushed to the Pact broker and can be viewed by navigating to `http://localhost:9292/` and the last verified time will be displayed.
+<!-- image of result -->
+### 6. (optional) Setup Jenkins Pipeline
+Jenkins can be used to setup a pipeline and to monitor test history and results. In the real world testing of contracts, a pipeline would consist of a jenkins job on the Consumer premisis which will create a contract and push it to the Pact Broker. 
+<br>
+However for the purpose of this task i have created a pipeline which runs both **Consumer** and **Provider** tests only to test the integration of this project. 
+
+Steps:
+1. On Jenkins - create a job for Consumer
+   <br> 
+   configure the job to Delete workspace before job starts
+   <br>
+   add a build step to execute Windows batch command
+   <br>
+   input the absolute path of the batch `consumer.bat` which is located in `consumer` directory
+   <br>
+   add the following Post build action - Publish JUnit test result report
+   <br>
+   in the test reports XML section input `report.xml`
+
+2. On Jenkins - create a job for Provider
+   <br> 
+   configure the job to Delete workspace before job starts
+   <br>
+   add a build step to execute Windows batch command
+   <br>
+   input the absolute path of the batch `provider.bat` which is located in `inventory_api` directory
+   <br>
+   add the following Post build action - Publish JUnit test result report
+   <br>
+   in the test reports XML section input `report.xml`
+
+3. (optional) Create a job to start Pact Broker
+   <br>
+    configure the job to Delete workspace before job starts
+    <br>
+       add a build step to execute Windows batch command
+       <br>
+   input the absolute path of the batch `run_docker.bat` which is located in `root` directory
+
+4. (optional) Create a job to stop Pact Broker
+   <br>
+    configure the job to Delete workspace before job starts
+    <br>
+       add a build step to execute Windows batch command
+       <br>
+   input the absolute path of the batch `stop_docker.bat` which is located in `root` directory
+
+
 
 ## Future improvments 
 
