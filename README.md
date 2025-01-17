@@ -14,7 +14,7 @@ My approach to contract testing involves having three seperate entities:
 2. **Pact Broker** - the Pact broker is a web app which allows the consumer to share contacts with the provider. It also allows the provider to publish results. 
 3. **Provider** - the provider is the real API, the contracts are tested agains the real API. 
    
- ![flow](inventory_api/src/main/resources/static/flow_pact.png)  
+ ![flow](inventory_api/src/main/resources/static/flow_pact.jpg)  
 
 ## Brief Repo Contents
 In the real world, the Consumer and Provider would be on seperate repos, however for this task i have put them both on a single repo to keep things simple. 
