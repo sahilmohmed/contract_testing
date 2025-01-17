@@ -139,6 +139,7 @@ The Pact verification tests use JUnit5 annotations to setup the class and to def
 <br>
 I have also implemented Web security config for Bearer token authorization (see Authorization chapter below)
 
+
 ## Consumer Mock
 This is where the consumer tests are written and tested against a mock API. 
 A `@Service` client has been implemented to serve the mock server requests using a rest template:
